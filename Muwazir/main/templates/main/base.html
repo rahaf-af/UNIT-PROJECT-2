@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    {% load static %}
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{% block title%} {% endblock %}</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <link rel="stylesheet" href="/static/css_files/stayle.css">
+        {% block link%} {% endblock %}
+    </head>
+    <div class="contanor">
+        <body>
+            <header>
+                <h1>𝓜𝓤𝓦𝓐𝓩𝓘𝓡 </h1>
+                <a href="{%url 'main:home'%}">Home</a>
+                <a href="{%url 'main:about'%}">About</a>
+                <a href="">volunteers</a>
+                <a href="">My reservation</a>
+                <a href="{%url 'main:faq'%}"></a>
+                <a href="{%url 'main:contact'%}">contact</a> 
+                <span></span>
+                </nav>
+                <!--قائمة جانبية في الناف بار -->
+                <div class="menu"></div>
+
+            </header>
+
+            {% block content %}
+
+            {% endblock %}
+            <footer class="footer_content">
+                <hr>
+                <div class="footer-top">
+                    <ul class="socail_icons">
+                        <li>MUWAZIR</li>
+                        <li><i class="fab fa-facebook-f"></i></li>
+                        <li><i class="fab fa-twitter"></i></li>
+                        <li><i class="fab fa-youtube"></i></li>
+                        <li><i class="fab fa-linkedin-in"></i></li>
+                    </ul>
+                </div>
+            </footer>
+
+        </body>
+    </div>
+</html>

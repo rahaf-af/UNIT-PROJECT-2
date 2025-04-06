@@ -1,0 +1,69 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: ;
+}
+/*base*/
+header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 80px;
+    background-color: black;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+nav{
+    position: relative;
+    width: 500px;
+    height: 50px;
+    background: #222;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 10px;
+}
+nav a{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1em;
+    font-weight: 500;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    padding: 10px 15px;
+    z-index: 1;
+}
+nav span{
+    position: absolute;
+    top: 5;
+    left: 0;
+    width: 90px;
+    height: 40%;
+    background: linear-gradient(45deg,#d8b805,#d4b503);
+    border-radius: 15px;
+    transition: all 0.3s ease;
+}
+nav a:nth-child(1):hover~span{
+    left: 0px;
+}
+nav a:nth-child(2):hover~span{
+    left: 90px;
+}
+nav a:nth-child(3):hover~span{
+    left: 180px;
+}
+nav a:nth-child(4):hover~span{
+    left: 270px;
+}
+nav a:nth-child(5):hover~span{
+    left: 380px;
+}
+/*home*/
