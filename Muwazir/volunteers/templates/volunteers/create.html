@@ -1,0 +1,65 @@
+{% extends 'main/base.html' %}
+{% block title%} Create volunteer account{% endblock %}
+{% load static %}
+{% block content %}
+<div class="container text-center">
+    <div class="row">
+      <div class="col">
+        <form class="d-flex flex-column gap-2" action="{%url 'volunteers:create_volunteer_account' %}"meththod="post">
+            {% csrf_tpken %}
+            <label>Full name</label>
+            <input  type="text" placeholder="full_name"name="full_name" id="full_name" class="form-control"/>
+            <label>Phone num</label>
+            <input  type="tel" placeholder="phone_num" name="phone_num" id="phone_num"  class="form-control"/>
+            <div class="form-check">
+                <label>Gender</label>
+                <input class="form-check-input" type="radio" name="gender" id="gender">
+                <label class="form-check-label" for="Gender_chois1">
+                    Male
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="gender" id="gender" checked>
+                <label class="form-check-label" for="Gender_chois2">
+                    Female
+                </label>
+            </div>
+            <label>Email</label>
+            <input type="email" name="email" placeholder="email" id="email" class="form-control"/>
+            <label>Nationality</label>
+            <input type="text" name="nationality" placeholder="nationality" id="nationality"class="form-control"/>
+            <label>Experiences</label>
+            <textarea type="text" name="experiences" placeholder="experiences" id="experiences" class="form-control"></textarea>
+            <div class="form-check">
+                <label>Volunteering field</label>
+                <input class="form-check-input" type="checkbox" value="Guidanc" id="Guidanc" name="service">
+                <label class="form-check-label" for="Guidanc">
+                    Guidanc
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="Wheelchair push" id="Wheelchair push"name="service">
+                <label class="form-check-label" for="Wheelchair push">
+                    Wheelchair push
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="Search for missings" id="Search for missings"name="service">
+                <label class="form-check-label" for="Search for missingsd">
+                    Search for missings
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="Technical assistance" id="Technical assistance" name="service">
+                <label class="form-check-label" for="Technical assistance">
+                    Technical assistance
+                </label>
+            </div>
+        </form>
+        <form action="submit" method="POST">
+            <button class="btn" type="submit">Create account</button>
+        </form>
+      </div>
+    </div>
+  </div>
+{% endblock %}

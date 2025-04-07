@@ -1,151 +1,159 @@
 {% extends 'main/base.html' %}
-{% block title%} about us{% endblock %}
+{% block title%}Frequently Asked Questions{% endblock %}
 {% load static %}
 {% block link%} <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" /> {% endblock %}
 {% block content %}
     <div class="contanor">
-        <h1>Frequently Asked Questions</h1>
-        <div class="faq">
-            <button class="accoridion">
-                How does the website work?
-                <i class="fa-solid fa-chevron-down" ></i>
-            </button>
-            <div class="pannel">
-                <p> users can search for volunteers registered on the site based on the skills they need, then book the right volunteer for a specific period of time and communicate with them directly.</p>
-            </div>
-            <button class="accoridion">
-                Is the service available to all Hajj and Umrah performers?
-                <i class="fa-solid fa-chevron-down" ></i>
-            </button>
-            <div class="pannel">
-                <p>Yes, the website is available to all Hajj and Umrah performers regardless of their nationality or language.</p>
-            </div>
-            <button class="accoridion">
-                Can I contact volunteers before booking?
-                <i class="fa-solid fa-chevron-down" ></i>
-            </button>
-            <div class="pannel">
-                <p>Yes, the users can communicate with the volunteer through the phone number added by the volunteer upon registration.</p>
-            </div>
-            <button class="accoridion">
-                How do I register as a volunteer?
-                <i class="fa-solid fa-chevron-down" ></i>
-            </button>
-            <div class="pannel">
-                <p>You can register online by filling out the registration form and entering your personal data, skills, and hours of availability.</p>
-            </div>
-            <button class="accoridion">
-                What are the conditions for accepting volunteers on the platform?
-                <i class="fa-solid fa-chevron-down" ></i>
-            </button>
-            <div class="pannel">
-                <p>The volunteer must be an adult, and have skills that can benefit pilgrims, such as translation or first aid. It is also subject to review by management before approving its account.</p>
-            </div>
-            <button class="accoridion">
-                How do I know if a volunteer is reliable?
-                <i class="fa-solid fa-chevron-down" ></i>
-            </button>
-            <div class="pannel">
-                <p>Verified volunteers will receive a "trusted" badge next to their names, which means that the management has reviewed and verified their data.</p>
-            </div>
-            <button class="accoridion">
-                Can I edit my volunteer information after registration?
-                <i class="fa-solid fa-chevron-down" ></i>
-            </button>
-            <div class="pannel">
-                <p>Yes, you can edit your profile, such as changing your photo or updating skills and availability hours.</p>
-            </div>
-            <button class="accoridion">
-                How are volunteers evaluated?
-                <i class="fa-solid fa-chevron-down" ></i>
-            </button>
-            <div class="pannel">
-                <p>Users can evaluate volunteers after service based on their experience, helping others choose the right volunteer.</p>
-            </div>
-            <button class="accoridion">
-                How do I book a volunteer?
-                <i class="fa-solid fa-chevron-down" ></i>
-            </button>
-            <div class="pannel">
-                <p>You can search for volunteers based on the service you need, then choose the right volunteer and contact him directly to book the service.</p>
-            </div>
-            <button class="accoridion">
-                Can I cancel or amend my booking after it has been confirmed?
-                <i class="fa-solid fa-chevron-down" ></i>
-            </button>
-            <div class="pannel">
-                <p>Yes, the booking can be cancelled or amended by contacting the volunteer directly.</p>
-            </div>
-            <button class="accoridion">
-                What services can volunteers provide?
-                <i class="fa-solid fa-chevron-down" ></i>
-            </button>
-            <div class="pannel">
-                <p>Services currently available include translation, guidance, porterage.</p>
-            </div>
-            <button class="accoridion">
-                What should I do if the volunteer does not show up on time?
-                <i class="fa-solid fa-chevron-down" ></i>
-            </button>
-            <div class="pannel">
-                <p>You can search for another volunteer or report the absent volunteer via the contact form on the website.</p>
-            </div>
-            <button class="accoridion">
-                Is my personal data secure on the site?
-                <i class="fa-solid fa-chevron-down" ></i>
-            </button>
-            <div class="pannel">
-                <p>Yes, we take care to keep your information from unauthorized access.</p>
-            </div>
-            <button class="accoridion">
-                How is the identity of volunteers verified?
-                <i class="fa-solid fa-chevron-down" ></i>
-            </button>
-            <div class="pannel">
-                <p>Volunteers are verified by reviewing their personal information and interviewing them before being awarded the "Trusted" badge.</p>
-            </div>
-            <button class="accoridion">
-                What do I do if I have trouble with a volunteer?
-                <i class="fa-solid fa-chevron-down" ></i>
-            </button>
-            <div class="pannel">
-                <p>You can contact the support team to file a complaint and appropriate action will be taken.</p>
-            </div>
-            <button class="accoridion">
-                Can I report a volunteer or user?
-                <i class="fa-solid fa-chevron-down" ></i>
-            </button>
-            <div class="pannel">
-                <p>Yes, if you encounter a problem with a user, you can report it through the contact form.</p>
-            </div>
-            <button class="accoridion">
-                How do I delete my account from the site?
-                <i class="fa-solid fa-chevron-down" ></i>
-            </button>
-            <div class="pannel">
-                <p>You can submit an account deletion request through the settings page of your profile.</p>
-            </div>
-            <button class="accoridion">
-                How can I contact the site support team?
-                <i class="fa-solid fa-chevron-down" ></i>
-            </button>
-            <div class="pannel">
-                <p>You can contact us via the "Contact Us" page or through the dedicated support email.</p>
-            </div>
-            <button class="accoridion">
-                Can I volunteer more than one service?
-                <i class="fa-solid fa-chevron-down" ></i>
-            </button>
-            <div class="pannel">
-                <p>Yes, you can choose more than one skill when registering as a volunteer.</p>
-            </div>
-            <button class="accoridion">
-                Can I register on the site if I am in charge of a group of Hajj or Umrah performers?
-                <i class="fa-solid fa-chevron-down" ></i>
-            </button>
-            <div class="pannel">
-                <p>Yes, you can register as a group representative and coordinate with volunteers to help them.</p>
+        <div class="main">
+            <h1>Frequently Asked Questions</h1>
+            <div class="faq">
+                <button class="accoridion">
+                    How does the website work?
+                    <i class="fa-solid fa-chevron-down" ></i>
+                </button>
+                <div class="pannel">
+                    <p> users can search for volunteers registered on the site based on the skills they need, then book the right volunteer for a specific period of time and communicate with them directly.</p>
+                </div>
+                <button class="accoridion">
+                    Is the service available to all Hajj and Umrah performers?
+                    <i class="fa-solid fa-chevron-down" ></i>
+                </button>
+                <div class="pannel">
+                    <p>Yes, the website is available to all Hajj and Umrah performers regardless of their nationality or language.</p>
+                </div>
+                <button class="accoridion">
+                    Can I contact volunteers before booking?
+                    <i class="fa-solid fa-chevron-down" ></i>
+                </button>
+                <div class="pannel">
+                    <p>Yes, the users can communicate with the volunteer through the phone number added by the volunteer upon registration.</p>
+                </div>
+                <button class="accoridion">
+                    How do I register as a volunteer?
+                    <i class="fa-solid fa-chevron-down" ></i>
+                </button>
+                <div class="pannel">
+                    <p>You can register online by filling out the registration form and entering your personal data, skills, and hours of availability.</p>
+                </div>
+                <button class="accoridion">
+                    What are the conditions for accepting volunteers on the platform?
+                    <i class="fa-solid fa-chevron-down" ></i>
+                </button>
+                <div class="pannel">
+                    <p>The volunteer must be an adult, and have skills that can benefit pilgrims, such as translation or first aid. It is also subject to review by management before approving its account.</p>
+                </div>
+                <button class="accoridion">
+                    How do I know if a volunteer is reliable?
+                    <i class="fa-solid fa-chevron-down" ></i>
+                </button>
+                <div class="pannel">
+                    <p>Verified volunteers will receive a "trusted" badge next to their names, which means that the management has reviewed and verified their data.</p>
+                </div>
+                <button class="accoridion">
+                    Can I edit my volunteer information after registration?
+                    <i class="fa-solid fa-chevron-down" ></i>
+                </button>
+                <div class="pannel">
+                    <p>Yes, you can edit your profile, such as changing your photo or updating skills and availability hours.</p>
+                </div>
+                <button class="accoridion">
+                    How are volunteers evaluated?
+                    <i class="fa-solid fa-chevron-down" ></i>
+                </button>
+                <div class="pannel">
+                    <p>Users can evaluate volunteers after service based on their experience, helping others choose the right volunteer.</p>
+                </div>
+                <button class="accoridion">
+                    How do I book a volunteer?
+                    <i class="fa-solid fa-chevron-down" ></i>
+                </button>
+                <div class="pannel">
+                    <p>You can search for volunteers based on the service you need, then choose the right volunteer and contact him directly to book the service.</p>
+                </div>
+                <button class="accoridion">
+                    Can I cancel or amend my booking after it has been confirmed?
+                    <i class="fa-solid fa-chevron-down" ></i>
+                </button>
+                <div class="pannel">
+                    <p>Yes, the booking can be cancelled or amended by contacting the volunteer directly.</p>
+                </div>
+                <button class="accoridion">
+                    What services can volunteers provide?
+                    <i class="fa-solid fa-chevron-down" ></i>
+                </button>
+                <div class="pannel">
+                    <p>Services currently available include translation, guidance, porterage.</p>
+                </div>
+                <button class="accoridion">
+                    What should I do if the volunteer does not show up on time?
+                    <i class="fa-solid fa-chevron-down" ></i>
+                </button>
+                <div class="pannel">
+                    <p>You can search for another volunteer or report the absent volunteer via the contact form on the website.</p>
+                </div>
+                <button class="accoridion">
+                    Is my personal data secure on the site?
+                    <i class="fa-solid fa-chevron-down" ></i>
+                </button>
+                <div class="pannel">
+                    <p>Yes, we take care to keep your information from unauthorized access.</p>
+                </div>
+                <button class="accoridion">
+                    How is the identity of volunteers verified?
+                    <i class="fa-solid fa-chevron-down" ></i>
+                </button>
+                <div class="pannel">
+                    <p>Volunteers are verified by reviewing their personal information and interviewing them before being awarded the "Trusted" badge.</p>
+                </div>
+                <button class="accoridion">
+                    What do I do if I have trouble with a volunteer?
+                    <i class="fa-solid fa-chevron-down" ></i>
+                </button>
+                <div class="pannel">
+                    <p>You can contact the support team to file a complaint and appropriate action will be taken.</p>
+                </div>
+                <button class="accoridion">
+                    Can I report a volunteer or user?
+                    <i class="fa-solid fa-chevron-down" ></i>
+                </button>
+                <div class="pannel">
+                    <p>Yes, if you encounter a problem with a user, you can report it through the contact form.</p>
+                </div>
+                <button class="accoridion">
+                    How do I delete my account from the site?
+                    <i class="fa-solid fa-chevron-down" ></i>
+                </button>
+                <div class="pannel">
+                    <p>You can submit an account deletion request through the settings page of your profile.</p>
+                </div>
+                <button class="accoridion">
+                    How can I contact the site support team?
+                    <i class="fa-solid fa-chevron-down" ></i>
+                </button>
+                <div class="pannel">
+                    <p>You can contact us via the "Contact Us" page or through the dedicated support email.</p>
+                </div>
+                <button class="accoridion">
+                    Can I volunteer more than one service?
+                    <i class="fa-solid fa-chevron-down" ></i>
+                </button>
+                <div class="pannel">
+                    <p>Yes, you can choose more than one skill when registering as a volunteer.</p>
+                </div>
+                <button class="accoridion">
+                    Can I register on the site if I am in charge of a group of Hajj or Umrah performers?
+                    <i class="fa-solid fa-chevron-down" ></i>
+                </button>
+                <div class="pannel">
+                    <p>Yes, you can register as a group representative and coordinate with volunteers to help them.</p>
+                </div>
             </div>
         </div>
     </div>
+    <script>
+        var acc=document.getElementsByClassName
+        ("accoridion");
+        var i;
+        for()
+    </script>
 {% endblock %}
