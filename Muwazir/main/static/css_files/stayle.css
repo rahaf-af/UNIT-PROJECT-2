@@ -59,15 +59,12 @@ footer i{
 .home1{
     margin: auto;
     padding: 20px 20px 20px 20px ;
+    border-radius:50px;
  }
- 
-.home1 .card-img-overlay{
-    color: black;
-
-}
 .home1 .card{
-    height: 100%;
+    height: 50%;
 }
+
 
 
 
