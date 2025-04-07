@@ -26,6 +26,7 @@ header a{
 }
 footer{
     color: black;
+    height: 70px;
 }
 
 footer ul{
@@ -54,12 +55,25 @@ footer i{
     padding: 0;
     margin: 0;
 }
-
 /*home page*/
 .home1{
-    background-image:url('images/prayer.jpg');
-    background-repeat: no-repeat;
-    height:100px;
-    background-size: cover;
-    background-position: center;
+    margin: auto;
+    padding: 20px 20px 20px 20px ;
+ }
+ 
+.home1 .card-img-overlay{
+    color: black;
+
+}
+.home1 .card{
+    height: 100%;
+}
+
+
+
+   
+/*About page*/
+.about2{
+    background-color: #b39164;
+    border-radius:30px;
 }
