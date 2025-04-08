@@ -15,4 +15,9 @@ def volunteer_search(request:HttpRequest):
 
     return render(request, "volunteers/search.html")
 
+def all_volunteers(request:HttpRequest):
+    volunteers=volunteer.objects.all()
+    return render(request, "volunteers/all.html")
+
+
     

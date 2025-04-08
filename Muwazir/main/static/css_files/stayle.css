@@ -11,7 +11,7 @@ header{
     height: 70px;
     justify-content:center;
     align-items:center;
-    gap:35px;
+    gap:30px;
     
 }
 header h1{
@@ -56,21 +56,33 @@ footer i{
     margin: 0;
 }
 /*home page*/
+
 .home1{
     margin: auto;
     padding: 20px 20px 20px 20px ;
-    border-radius:50px;
+    border-radius:50%;
  }
 .home1 .card{
     height: 50%;
 }
-
-
-
-
-   
+.home3 .card-body{
+    border-radius: 50%;
+}
+.home3 .h3{
+    margin-right: auto;
+}
+.home5{
+    padding: 20px 20px 20px 20px ;
+}
+.home5 .btn{
+    background-color: #b39164;
+}
+ 
 /*About page*/
 .about2{
     background-color: #b39164;
     border-radius:30px;
+}
+.about3 .card-group{
+    border-radius:50px;
 }

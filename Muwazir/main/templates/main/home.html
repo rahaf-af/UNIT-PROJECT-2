@@ -11,7 +11,7 @@
                             <img src="{% static 'images/prayer.jpg' %}" class="card-img" alt="home photo">
                             <div class="card-img-overlay">
                                 <h1 class="card-title">MUWAZIR</h1>
-                              <h4 class="card-text">We shorten the distance between pilgrims and  volunteer</h4>
+                              <h4 class="card-text">We shorten the distance between pilgrims and  volunteers</h4>
                               <p><strong>For the finest service and the easiest spiritual experience</strong></p>
                               <form class="d-flex" role="search" method="GET" action="{% url 'volunteers:volunteer_search' %}"> <input class="form-control me-2" type="search" placeholder="search.." aria-label="Search" name="query"> <button class="btn btn-outline-success" type="submit">🔎</button> </form>
                             </div>
@@ -21,19 +21,29 @@
             </section>
         </div>
         <div class="container text-center">
+            <section class="home2">
+                <h3>About us</h3>
+                <div class="row">
+                    <div class="col">
+
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div class="container text-center">
             <section class="home3">
                 <h3>Our services</h3>
                 <div class="row">
                     <div class="col">
-                        <div class="card" style="width: 15rem;">
+                        <div class="card" style="width: 11rem;height:10rem;">
                             <img src="{% static 'images/Translation.jpg' %}" class="card-img-top" alt="...">
                             <div class="card-body">
-                            <p class="card-text">Translation</p>
+                            <p class="card-text">Translation </p>
                             </div>
                         </div>
                     </div>
                     <div class="col">
-                        <div class="card" style="width: 15rem;">
+                        <div class="card" style="width: 11rem;height:10rem;">
                             <img src="{% static 'images/Guidanc.jpg.webp' %}" class="card-img-top" alt="...">
                             <div class="card-body">
                             <p class="card-text">Guidanc</p>
@@ -41,15 +51,15 @@
                         </div>
                     </div>
                     <div class="col">
-                        <div class="card" style="width: 15rem;">
+                        <div class="card" style="width: 11rem;height:10rem;">
                             <img src="{% static 'images/Wheelchair pushing.jpg' %}" class="card-img-top" alt="...">
                             <div class="card-body">
-                            <p class="card-text">Wheelchair pushing</p>
+                            <p class="card-text">pushing Wheelchair</p>
                             </div>
                         </div>
                     </div>
                     <div class="col">
-                        <div class="card" style="width: 15rem;">
+                        <div class="card" style="width: 11rem;height:10rem;">
                             <img src="..." class="card-img-top" alt="...">
                             <div class="card-body">
                             <p class="card-text">Search for missings</p>
@@ -57,7 +67,7 @@
                         </div>
                     </div>
                     <div class="col">
-                        <div class="card" style="width: 15rem;">
+                        <div class="card" style="width: 11rem ;height:10rem;">
                             <img src="..." class="card-img-top" alt="...">
                             <div class="card-body">
                             <p class="card-text">Technical assistance</p>
@@ -67,5 +77,35 @@
                 </div>
             </section>
         </div>
+        <div class="container text-center">
+            <section class="home4">
+                <div class="row">
+                    <div class="col">
+
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div class="container text-center">
+            <section class="home5">
+                <h3> Our volunteers</h3>
+                <div class="row">
+                    {%for volunteer in volunteers %}
+                        <div class="col">
+                            <div class="card" style="width: 18rem; ">
+                                <img src="..." class="card-img-top" alt="...">
+                                <div class="card-body">
+                                  <h5 class="card-title">{{volunteer.full_name}}</h5>
+                                  <p class="card-text">{{volunteer.gender}}</p>
+                                  <p class="card-text">{{volunteer.service}}</p>
+                                   <a href="#" class="btn btn-primary">More details</a>
+                                </div>
+                              </div>
+                        </div>
+
+                    {% endfor %}
+                </div>
+            </section>
+        </div>                
     </div>
 {% endblock %}

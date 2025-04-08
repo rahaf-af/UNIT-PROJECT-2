@@ -2,6 +2,7 @@ from django.db import models
 
 # Create your models here.
 class user(models.Model):
+    profile_photo=models.ImageField(upload_to="images/" ,default="images/profil photo.jpg")
     full_name=models.CharField(max_length=100)
     phone_num=models.IntegerField()
     gender=models.CharField(max_length=100,default='M')
@@ -9,6 +10,7 @@ class user(models.Model):
     nationality=models.CharField(max_length=512) 
 
 class volunteer(models.Model):
+    profile_photo=models.ImageField(upload_to="images/" ,default="images/profil photo.jpg")
     full_name=models.CharField(max_length=100)
     phone_num=models.IntegerField()
     gender=models.CharField(max_length=100,default='M')
