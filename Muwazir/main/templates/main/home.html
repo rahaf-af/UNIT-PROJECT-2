@@ -7,7 +7,7 @@
             <section class="home1">
                 <div class="row">
                     <div class="col">
-                        <div class="card text-bg-dark">
+                        <div class="card text-bg-dark w-80 height:50px">
                             <img src="{% static 'images/prayer.jpg' %}" class="card-img" alt="home photo">
                             <div class="card-img-overlay">
                                 <h1 class="card-title">MUWAZIR</h1>
@@ -31,7 +31,7 @@
             </section>
         </div>
         <div class="container text-center">
-            <section class="home3">
+            <section class="home3 ">
                 <h3>Our services</h3>
                 <div class="row">
                     <div class="col">
@@ -60,7 +60,7 @@
                     </div>
                     <div class="col">
                         <div class="card" style="width: 11rem;height:10rem;">
-                            <img src="..." class="card-img-top" alt="...">
+                            <img src="{% static 'images/Search for missings.jpg' %}" class="card-img-top" alt="...">
                             <div class="card-body">
                             <p class="card-text">Search for missings</p>
                             </div>
@@ -68,7 +68,7 @@
                     </div>
                     <div class="col">
                         <div class="card" style="width: 11rem ;height:10rem;">
-                            <img src="..." class="card-img-top" alt="...">
+                            <img src="{% static 'images/tec.jpg' %}" class="card-img-top" alt="...">
                             <div class="card-body">
                             <p class="card-text">Technical assistance</p>
                             </div>
@@ -93,7 +93,7 @@
                     {%for volunteer in volunteers %}
                         <div class="col">
                             <div class="card" style="width: 18rem; ">
-                                <img src="{{volunteer.profile_photo}}" class="card-img-top" alt="...">
+                                <img src="{{volunteer.profile_photo}}" class="card-img-top w-100" alt="...">
                                 <div class="card-body">
                                   <h5 class="card-title">{{volunteer.full_name}}</h5>
                                   <p class="card-text">{{volunteer.gender}}</p>
