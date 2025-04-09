@@ -14,6 +14,8 @@ header{
     gap:90px;
     padding: 0;
     margin: 0;
+    border: 1px solid rgba(255, 255, 255, 0.3); 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
     
 }
 header h1{
@@ -63,6 +65,9 @@ footer li{
     width: 100% ;
     height: 15rem;
     background-color: #cea46d; 
+    border: 1px solid rgba(255, 255, 255, 0.3); 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+    color: black;
 }
 .home3 .card{
     background: rgba(255, 255, 255, 0.1);
