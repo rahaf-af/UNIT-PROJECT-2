@@ -2,4 +2,5 @@
 {% block title%}search volunteers{% endblock %}
 {% load static %}
 {% block content %}
+    <form class="d-flex" role="search" method="GET" action="{% url 'volunteers:volunteer_search' %}"> <input class="form-control me-2" type="search" placeholder="search.." aria-label="Search" name="query"> <button class="btn btn-outline-success" type="submit">🔎</button> </form>
 {% endblock %}

@@ -11,7 +11,7 @@ header{
     height: 70px;
     justify-content:center;
     align-items:center;
-    gap:30px;
+    gap:90px;
     padding: 0;
     margin: 0;
     
@@ -43,21 +43,7 @@ footer ul{
 footer li{
     display: inline-block;
 }
-footer i{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 40px;
-    height: 40px;
-    background-color: #cea46d;
-    border-radius: 50%;
-    text-decoration: none;
-    font-size: 20px;
-    text-align: center;
-    line-height: 0;
-    padding: 0;
-    margin: 0;
-}
+
 /*home page*/
 
 .home1{
@@ -67,6 +53,7 @@ footer i{
  }
 .home1 .card-img-overlay{
     color: black;
+    text-shadow: 1px 1px 4px #cea46d;
     
 }
 .home3 {
