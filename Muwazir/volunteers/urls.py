@@ -8,4 +8,6 @@ urlpatterns=[
    path("search/",views.volunteer_search,name="volunteer_search"),
    path("all/",views.all_volunteers,name="all_volunteers"),
    path("profile/<volunteer_id>",views.volunteer_profile,name="volunteer_profile"),
+   path("update/<volunteer_id>",views.update_profile,name="update_profile"),
+   path("login/",views.login,name="login"),
 ]

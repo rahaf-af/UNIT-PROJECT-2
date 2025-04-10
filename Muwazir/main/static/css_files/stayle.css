@@ -4,31 +4,17 @@
     box-sizing: border-box;
 }
 /*base*/
-header{
+.navbar{
+    /*background-color: #cea46d !important;*/
+    box-shadow: 0 8px 15px rgba(0, 0, 0, .1);
+}
+.login-button{
     background-color: #cea46d;
-    display: flex;
     color: black;
-    height: 70px;
-    justify-content:center;
-    align-items:center;
-    gap:90px;
-    padding: 0;
-    margin: 0;
-    border: 1px solid rgba(255, 255, 255, 0.3); 
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
-    
+    font-size: 14px;
+    padding: 8px 20px;
+    border-radius: 50px;
 }
-header h1{
-    margin-right: auto;
-    margin-left: 15px;
-}
-header a{
-    
-    color: black;
-    text-decoration: none;
-    display: flex;
-}
-
 footer{
     color: black;
     height: 70px;
@@ -49,7 +35,7 @@ footer li{
 /*home page*/
 
 .home1{
-    margin: auto;
+    margin:70px;
     padding: 20px 20px 20px 20px ;
     color: black;
  }
@@ -58,6 +44,94 @@ footer li{
     text-shadow: 1px 1px 4px #cea46d;
     
 }
+.home1 .btn{
+    background-color: #cea46d;
+    color: black;
+    font-size: 14px;
+    padding: 8px 20px;
+    border-radius: 50px;
+}
+.home3_1 {
+    background: #f8f9fa;
+    padding: 40px 20px;
+}
+
+.stats-card {
+    border: none;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.stats-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, .1);
+}
+
+.card-hover-primary:hover {
+    background: linear-gradient(45deg, #cea46d, #cea46d);
+}
+
+.card-hover-success:hover {
+    background: linear-gradient(45deg, #cea46d, #cea46d);
+}
+
+.card-hover-info:hover {
+    background: linear-gradient(45deg, #cea46d, #cea46d);
+}
+
+.card-hover-warning:hover {
+    background: linear-gradient(45deg, #cea46d, #cea46d);
+}
+
+.stats-card:hover .text-primary,
+.stats-card:hover .text-success,
+.stats-card:hover .text-info,
+.stats-card:hover .text-warning,
+.stats-card:hover .text-muted,
+.stats-card:hover .card-title {
+    color: white !important;
+}
+
+.icon-circle {
+    height: 60px;
+    width: 60px;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    background: rgba(0, 0, 0, .05);
+    transition: all 0.3s ease;
+}
+
+.stats-card:hover .icon-circle {
+    background: rgba(255, 255, 255, .2);
+}
+
+.stat-value {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin: 10px 0;
+}
+
+.progress {
+    height: 8px;
+    border-radius: 4px;
+    background: rgba(0, 0, 0, .05);
+}
+
+.progress-bar {
+    border-radius: 4px;
+}
+
+.stat-change {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.9rem;
+}
+
 .home3 {
     justify-content: center;
     align-items: center;

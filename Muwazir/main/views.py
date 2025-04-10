@@ -21,3 +21,6 @@ def contact(request:HttpRequest):
 def faq(request:HttpRequest):
    return render(request, 'main/faq.html')
    
+def services(request:HttpRequest):
+
+   return render(request, 'services/faq.html')

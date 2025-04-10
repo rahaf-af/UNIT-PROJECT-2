@@ -5,7 +5,7 @@
 <div class="container text-center">
     <div class="row">
       <div class="col">
-        <form class=" container flex-column gap-2 w-60" action="{%url 'volunteers:create_volunteer_account' %}"meththod="POST" enctype="multipart/form-data" style="background-color: #cea46d; width: 50%; height: 650px; border-radius: 10%;">
+        <form class=" container flex-column gap-2 w-60" action="{%url 'volunteers:create_volunteer_account' %}" method="POST" enctype="multipart/form-data" style="background-color: #cea46d; width: 50%; height: 650px; border-radius: 10%;">
             <h1>profile</h1>
             {% csrf_token %}
             <label>Full name</label>
