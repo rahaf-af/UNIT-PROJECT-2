@@ -2,5 +2,31 @@
 {% block title%}search volunteers{% endblock %}
 {% load static %}
 {% block content %}
-    <form class="d-flex" role="search" method="GET" action="{% url 'volunteers:volunteer_search' %}"> <input class="form-control me-2" type="search" placeholder="search.." aria-label="Search" name="query"> <button class="btn btn-outline-success" type="submit">🔎</button> </form>
+    <form class="d-flex" role="search" method="GET" action="{% url 'volunteers:volunteer_search' %}" method="GET">
+        <input class="form-control " type="search" placeholder="search.." aria-label="Search" name="Search"><button class="btn btn-outline-success" type="submit">🔎</button>
+    </form>
+    <div class="container py-5">
+        <h1 class="text-center" style="font-family: bromega-bold;">Search results</h1>
+        
+        <div class="row row-cols-1 row-cols-md-3 g-4 py-5">
+            {%for volunteer in volunteers %}
+                <div class="col">
+                    <div class="card" style="width: 240px; height: 370px;">
+                        <img src="{% static 'images/profil photo.jpg' %}" class="card-img-top" alt="{{%url'volunteers:profile_photo'%}}." >
+                        <div class="card-body">
+                            <h5 class="card-title"><h4>{{volunteer.full_name}}</h5>
+                            <p class="card-text">{{volunteer.gender}} </p>
+                            <p class="card-text">{{volunteer.service}}</p>
+                            <div class="d-flex justify-content-around mb-5">
+                                <h4>Available</h4>
+                                <a href="{%url 'volunteers:volunteer_profile' volunteer.id %}"><button class="btn btn-primary">More details</button></a>
+                            </div>
+                        </div>
+                    </div>
+    
+                </div>
+            {% endfor %}
+        </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+        
 {% endblock %}

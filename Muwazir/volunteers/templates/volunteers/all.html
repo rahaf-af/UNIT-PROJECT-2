@@ -4,18 +4,19 @@
 {% block content %}
 <div class="container py-5">
     <h1 class="text-center" style="font-family: bromega-bold;"> Our volunteers</h1>
+    
     <div class="row row-cols-1 row-cols-md-3 g-4 py-5">
         {%for volunteer in volunteers %}
             <div class="col">
-                <div class="card">
-                    <img src="{% static 'images/profil photo.jpg' %}" class="card-img-top" alt="..." >
+                <div class="card" style="width: 240px; height: 370px;">
+                    <img src="{% static 'images/profil photo.jpg' %}" class="card-img-top" alt="{{%url'volunteers:profile_photo'%}}." >
                     <div class="card-body">
                         <h5 class="card-title"><h4>{{volunteer.full_name}}</h5>
                         <p class="card-text">{{volunteer.gender}} </p>
                         <p class="card-text">{{volunteer.service}}</p>
                         <div class="d-flex justify-content-around mb-5">
                             <h4>Available</h4>
-                            <button class="btn btn-primary">Book now</button>
+                            <a href="{%url 'volunteers:volunteer_profile' volunteer.id %}"><button class="btn btn-primary">More details</button></a>
                         </div>
                     </div>
                 </div>

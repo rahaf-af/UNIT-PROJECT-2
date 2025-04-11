@@ -8,7 +8,7 @@ def user_type(request:HttpRequest):
    return render(request, 'main/user_type.html')
 
 def home(request:HttpRequest):
-   volunteers=volunteer.objects.all()
+   volunteers=volunteer.objects.all()[0:3]
     
    return render(request, 'main/home.html',{"volunteers" : volunteers})
 

@@ -7,7 +7,9 @@ urlpatterns=[
    path("create/",views.create_volunteer_account,name="create_volunteer_account"),
    path("search/",views.volunteer_search,name="volunteer_search"),
    path("all/",views.all_volunteers,name="all_volunteers"),
-   path("profile/<volunteer_id>",views.volunteer_profile,name="volunteer_profile"),
-   path("update/<volunteer_id>",views.update_profile,name="update_profile"),
+   path("profile/<int:volunteer_id>/",views.volunteer_profile,name="volunteer_profile"),
+   path("update/<int:volunteer_id>/",views.update_profile,name="update_profile"),
+    path("delete<int:volunteer_id>/",views.delete_profile,name="delete_profile"),
+    path("availability/<int:volunteer_id>/",views.availability,name="availability"),
    path("login/",views.login,name="login"),
 ]

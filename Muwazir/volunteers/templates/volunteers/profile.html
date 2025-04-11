@@ -2,15 +2,15 @@
 {% block title%} volunteer Profile{% endblock %}
 {% load static %}
 {% block content %}
+
 <section style="background-color: #cea46d; border: white; border-width: 2rem;">
   <div class="container py-5">
     <div class="row">
       <div class="col">
         <nav aria-label="breadcrumb" class="bg-body-tertiary rounded-3 p-3 mb-4">
           <ol class="breadcrumb mb-0">
-            <li class="breadcrumb-item"><a href="#">Home</a></li>
-            <li class="breadcrumb-item"><a href="#">User</a></li>
-            <li class="breadcrumb-item active" aria-current="page">User Profile</li>
+            <li class="breadcrumb-item"><a href="{%url 'main:home'%}">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Profile</li>
           </ol>
         </nav>
       </div>
@@ -20,14 +20,21 @@
       <div class="col-lg-4">
         <div class="card mb-4">
           <div class="card-body text-center">
-            <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp" alt="avatar"
+            <img src={{volunteer.profile_photo}} alt="{% static 'main:images/profil photo.jpg' %}" 
               class="rounded-circle img-fluid" style="width: 150px;">
             <h5 class="my-3">{{volunteer.full_name}}</h5>
-            <p class="text-muted mb-1">Gender{{volunteer.gender}}</p>
-            <p class="text-muted mb-4">{{volunteer.gender}}</p>
-            <div class="d-flex justify-content-center mb-2">
-              <button  type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary">Follow</button>
-              <button  type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-outline-primary ms-1">Message</button>
+            <p class="text-muted mb-1">{{volunteer.gender}}</p>
+            <p class="text-muted mb-1">{{volunteer.service}}</p> 
+            <p class="text-muted mb-4">{{volunteer.Volunteering_site}}</p>
+            <form action="{% url 'volunteers:availability' volunteer.id %}" method="post">
+              {% csrf_token %}
+              <button type="submit" class="btn {% if volunteer.is_available %}btn-success{% else %}btn-danger{% endif %}" style="padding: 10px;">
+                {% if volunteer.is_available %}Available{% else %} Not available{% endif %}
+              </button>
+            </form>
+            <div class="d-flex justify-content-center mb-2 gap-2">
+              <a href="{% url 'volunteers:update_profile' volunteer_id=volunteer.id %}"><button  type="button" data-mdb-button-init data-mdb-ripple-init class="btn-primary">Update</button></a>
+              <a href="{% url 'volunteers:delete_profile' volunteer_id=volunteer.id %}"><button type="button" class="btn btn-denger" data-bs-toggle="modal" data-bs-target="#exampleModal">Delete</button></a>
             </div>
           </div>
         </div>
@@ -36,23 +43,23 @@
             <ul class="list-group list-group-flush rounded-3">
               <li class="list-group-item d-flex justify-content-between align-items-center p-3">
                 <i class="fas fa-globe fa-lg text-warning"></i>
-                <p class="mb-0">https://mdbootstrap.com</p>
+                <p class="mb-0">https://{{volunteer.full_name}}.com</p>
               </li>
               <li class="list-group-item d-flex justify-content-between align-items-center p-3">
                 <i class="fab fa-github fa-lg text-body"></i>
-                <p class="mb-0">mdbootstrap</p>
+                <p class="mb-0">{{volunteer.full_name}}</p>
               </li>
               <li class="list-group-item d-flex justify-content-between align-items-center p-3">
                 <i class="fab fa-twitter fa-lg" style="color: #55acee;"></i>
-                <p class="mb-0">@mdbootstrap</p>
+                <p class="mb-0">@{{volunteer.full_name}}</p>
               </li>
               <li class="list-group-item d-flex justify-content-between align-items-center p-3">
                 <i class="fab fa-instagram fa-lg" style="color: #ac2bac;"></i>
-                <p class="mb-0">mdbootstrap</p>
+                <p class="mb-0">{{volunteer.full_name}}</p>
               </li>
               <li class="list-group-item d-flex justify-content-between align-items-center p-3">
                 <i class="fab fa-facebook-f fa-lg" style="color: #3b5998;"></i>
-                <p class="mb-0">mdbootstrap</p>
+                <p class="mb-0">{{volunteer.full_name}}</p>
               </li>
             </ul>
           </div>
@@ -75,7 +82,7 @@
                 <p class="mb-0">Email</p>
               </div>
               <div class="col-sm-9">
-                <p class="text-muted mb-0">example@example.com</p>
+                <p class="text-muted mb-0">{{volunteer.email}}</p>
               </div>
             </div>
             <hr>
@@ -84,7 +91,7 @@
                 <p class="mb-0">Phone</p>
               </div>
               <div class="col-sm-9">
-                <p class="text-muted mb-0">(097) 234-5678</p>
+                <p class="text-muted mb-0">{{volunteer.phone_num}}</p>
               </div>
             </div>
             <hr>
@@ -99,10 +106,10 @@
             <hr>
             <div class="row">
               <div class="col-sm-3">
-                <p class="mb-0">Address</p>
+                <p class="mb-0">Experiences</p>
               </div>
               <div class="col-sm-9">
-                <p class="text-muted mb-0">Bay Area, San Francisco, CA</p>
+                <p class="text-muted mb-0">{{volunteer.experiences}}</p>
               </div>
             </div>
           </div>
