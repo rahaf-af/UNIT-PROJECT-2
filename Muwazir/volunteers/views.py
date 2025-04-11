@@ -23,11 +23,11 @@ def volunteer_search(request:HttpRequest):
 
 def all_volunteers(request:HttpRequest):
     volunteers=volunteer.objects.all()
-    return render(request, "volunteers/all.html")
+    return render(request, "volunteers/all.html",{"volunteers" : volunteers})
 
 def volunteer_profile(request:HttpRequest ,volunteer_id:int):
     volunteers=volunteer.objects.get(pk=volunteer_id)
-    return render(request, "volunteers/profileh.html",{"volunteers":volunteer})
+    return render(request, "volunteers/profile.html",{"volunteers":volunteer})
 
 def update_profile(request:HttpRequest ,volunteer_id:int):
     volunteers=volunteer.objects.get(pk=volunteer_id)

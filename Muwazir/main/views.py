@@ -23,4 +23,4 @@ def faq(request:HttpRequest):
    
 def services(request:HttpRequest):
 
-   return render(request, 'services/faq.html')
+   return render(request, 'main/services.html')

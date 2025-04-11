@@ -1,15 +1,28 @@
 {% extends 'main/base.html' %}
-{% block title%}our volunteers{% endblock %}
+{% block title%}Our volunteers{% endblock %}
 {% load static %}
 {% block content %}
-<div class="contanor">
-    <div class="main">
-        <div class="row">
-            <div class="col-6">
-                
-            </div>
-        </div>
-    </div>
+<div class="container py-5">
+    <h1 class="text-center" style="font-family: bromega-bold;"> Our volunteers</h1>
+    <div class="row row-cols-1 row-cols-md-3 g-4 py-5">
+        {%for volunteer in volunteers %}
+            <div class="col">
+                <div class="card">
+                    <img src="{% static 'images/profil photo.jpg' %}" class="card-img-top" alt="..." >
+                    <div class="card-body">
+                        <h5 class="card-title"><h4>{{volunteer.full_name}}</h5>
+                        <p class="card-text">{{volunteer.gender}} </p>
+                        <p class="card-text">{{volunteer.service}}</p>
+                        <div class="d-flex justify-content-around mb-5">
+                            <h4>Available</h4>
+                            <button class="btn btn-primary">Book now</button>
+                        </div>
+                    </div>
+                </div>
 
-</div>
+            </div>
+        {% endfor %}
+    </div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+        
 {% endblock %}

@@ -16,4 +16,4 @@ def create_user_account(request:HttpRequest):
 def user_profile(request:HttpRequest  ,user_id:int):
     users=user.objects.get(pk=user_id)
 
-    return render(request, "users/profileh.html",{"users":user})
+    return render(request, "users/profile.html",{"users":user})
