@@ -17,8 +17,8 @@ def login(request:HttpRequest):
 
 
 def volunteer_search(request:HttpRequest):
-    if "search" in request.GET:
-        volunteers=volunteer.objects.filter(gender__contains=request.GET["search"])
+    if "search" in request.GET and len(request.GET["search"]) >=1: 
+        volunteers=volunteer.objects.filter(service__contains=request.GET["search"])
     else:
         volunteers=[]
 
