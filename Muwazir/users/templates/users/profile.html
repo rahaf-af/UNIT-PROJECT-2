@@ -28,12 +28,12 @@
           <div class="col-lg-4">
             <div class="card mb-4">
               <div class="card-body text-center">
-                <img src="{% static 'images/volunteer.jpg' %}" alt="{% static 'images/volunteer.jpg' %}"
+                <img src="{% static 'images/Hujj_or_Umrah_performer.jpg' %}" alt="{% static 'images/Hujj_or_Umrah_performer.jpg' %}"
                   class="rounded-circle img-fluid" style="width: 150px;">
-                <h5 class="my-3">{{volunteer.full_name}}</h5>
-                <p class="text-muted mb-1">{{volunteer.gender}}</p>
-                <p class="text-muted mb-1">{{volunteer.service}}</p> 
-                <p class="text-muted mb-4">{{volunteer.Volunteering_site}}</p>
+                <h5 class="my-3">{{user.full_name}}</h5>
+                <p class="text-muted mb-1">{{user.gender}}</p>
+                <p class="text-muted mb-1">{{user.nationality}}</p> 
+                
                 <div class="d-flex justify-content-center mb-2 gap-2">
                   <a href="{% url 'users:update_profile' user_id=user.id %}"><button  type="button" data-mdb-button-init data-mdb-ripple-init class="btn-primary">Update</button></a>
                   <a href="{% url 'users:delete_profile' user_id=user.id %}"><button type="button" class="btn btn-denger" data-bs-toggle="modal" data-bs-target="#exampleModal">Delete</button></a>
@@ -49,7 +49,7 @@
                     <p class="mb-0">Full Name</p>
                   </div>
                   <div class="col-sm-9">
-                    <p class="text-muted mb-0">{{volunteer.full_name}}</p>
+                    <p class="text-muted mb-0">{{user.full_name}}</p>
                   </div>
                 </div>
                 <hr>
@@ -58,7 +58,7 @@
                     <p class="mb-0">Email</p>
                   </div>
                   <div class="col-sm-9">
-                    <p class="text-muted mb-0">{{volunteer.email}}</p>
+                    <p class="text-muted mb-0">{{user.email}}</p>
                   </div>
                 </div>
                 <hr>
@@ -67,27 +67,10 @@
                     <p class="mb-0">Phone</p>
                   </div>
                   <div class="col-sm-9">
-                    <p class="text-muted mb-0">{{volunteer.phone_num}}</p>
+                    <p class="text-muted mb-0">{{user.phone_num}}</p>
                   </div>
                 </div>
                 <hr>
-                <div class="row">
-                  <div class="col-sm-3">
-                    <p class="mb-0">Mobile</p>
-                  </div>
-                  <div class="col-sm-9">
-                    <p class="text-muted mb-0">(098) 765-4321</p>
-                  </div>
-                </div>
-                <hr>
-                <div class="row">
-                  <div class="col-sm-3">
-                    <p class="mb-0">Experiences</p>
-                  </div>
-                  <div class="col-sm-9">
-                    <p class="text-muted mb-0">{{volunteer.experiences}}</p>
-                  </div>
-                </div>
               </div>
             </div>
           </div>

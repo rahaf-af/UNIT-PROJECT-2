@@ -1,6 +1,6 @@
 from django.shortcuts import render ,redirect
 from django.http import HttpRequest,HttpResponse
-from main.models import user
+from main.models import user,volunteer
 
 # Create your views here.
 def create_user_account(request:HttpRequest):
@@ -38,5 +38,12 @@ def update_profile(request:HttpRequest ,user_id:int):
         return redirect('users:user_profile',users_id = users.id)
        
 
-    return render(request, "volunteers/update_profile.html",{"user":users})
+    return render(request, "users/update_profile.html",{"user":users})
 
+def user_bookings(request:HttpRequest):
+
+    return render(request, "users/user_bookings.html")
+
+def volunteer_profile(request:HttpRequest ,volunteer_id:int):
+    volunteers=volunteer.objects.get(pk=volunteer_id)
+    return render(request, "users/volunteer_profile.html",{"volunteer":volunteers})
