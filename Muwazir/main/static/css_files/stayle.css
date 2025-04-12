@@ -264,3 +264,12 @@ footer li{
 }
 
 /*login page*/
+
+
+/* user type */
+
+.custom-border {
+    border: 3px solid #cea46d; 
+    border-radius: 15px; 
+    height: 700px;
+}
