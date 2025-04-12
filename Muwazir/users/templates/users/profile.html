@@ -35,8 +35,8 @@
                 <p class="text-muted mb-1">{{volunteer.service}}</p> 
                 <p class="text-muted mb-4">{{volunteer.Volunteering_site}}</p>
                 <div class="d-flex justify-content-center mb-2 gap-2">
-                  <a href="{% url 'volunteers:update_profile' volunteer_id=volunteer.id %}"><button  type="button" data-mdb-button-init data-mdb-ripple-init class="btn-primary">Update</button></a>
-                  <a href="{% url 'volunteers:delete_profile' volunteer_id=volunteer.id %}"><button type="button" class="btn btn-denger" data-bs-toggle="modal" data-bs-target="#exampleModal">Delete</button></a>
+                  <a href="{% url 'users:update_profile' user_id=user.id %}"><button  type="button" data-mdb-button-init data-mdb-ripple-init class="btn-primary">Update</button></a>
+                  <a href="{% url 'users:delete_profile' user_id=user.id %}"><button type="button" class="btn btn-denger" data-bs-toggle="modal" data-bs-target="#exampleModal">Delete</button></a>
                 </div>
               </div>
             </div>

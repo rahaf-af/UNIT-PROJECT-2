@@ -22,4 +22,21 @@ def delete_profile(request:HttpRequest ,user_id:int):
     users=user.objects.get(pk=user_id)
     users.delete()
     
-    return redirect("main:singun")
+    return redirect("main:singup")
+
+def update_profile(request:HttpRequest ,user_id:int):
+    users=user.objects.get(pk=user_id)
+    if request.method=="POST":
+        users.full_name=request.POST["full_name"]
+        users.gender=request.POST["gender"]
+        users.nationality=request.POST["nationality"]
+        users.phone_num=request.POST["phone_num"]
+        users.email=request.POST["email"]
+        if "profile_photo" in request.FILES:
+            users.profile_photo=request.FILES["profile_photo"]
+            users.save()
+        return redirect('users:user_profile',users_id = users.id)
+       
+
+    return render(request, "volunteers/update_profile.html",{"user":users})
+
