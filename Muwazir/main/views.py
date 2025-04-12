@@ -24,3 +24,9 @@ def faq(request:HttpRequest):
 def services(request:HttpRequest):
 
    return render(request, 'main/services.html')
+
+def signin(request:HttpRequest):
+   return render(request, 'main/signin.html')
+
+def signup(request:HttpRequest):
+   return render(request, 'main/signup.html')

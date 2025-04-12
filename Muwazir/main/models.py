@@ -30,9 +30,5 @@ class volunteer(models.Model):
         return self.full_name 
 
 
-    
-
-
-
 #class booking(models.Model):
 
