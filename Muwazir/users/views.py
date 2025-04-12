@@ -17,3 +17,9 @@ def user_profile(request:HttpRequest  ,user_id:int):
     users=user.objects.get(pk=user_id)
 
     return render(request, "users/profile.html",{"users":user})
+
+def delete_profile(request:HttpRequest ,user_id:int):
+    users=user.objects.get(pk=user_id)
+    users.delete()
+    
+    return redirect("main:singun")

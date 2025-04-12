@@ -54,7 +54,7 @@ def delete_profile(request:HttpRequest ,volunteer_id:int):
     volunteers=volunteer.objects.get(pk=volunteer_id)
     volunteers.delete()
     
-    return redirect("main:home")
+    return redirect("main:singup")
 
 def availability(request:HttpRequest ,volunteer_id:int):
     volunteers=volunteer.objects.get(pk=volunteer_id)
