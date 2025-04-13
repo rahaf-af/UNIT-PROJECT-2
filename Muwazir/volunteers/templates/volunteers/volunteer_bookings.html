@@ -1,0 +1,48 @@
+
+{% extends 'main/base.html' %}
+{% block title%} home{% endblock %}
+{% load static %}
+{% block content %}<div class="container py-5">
+    <h2 class="mb-4">Incoming Bookings</h2>
+  
+    {% if bookings %}
+      <div class="table-responsive">
+        <table class="table table-bordered table-striped">
+          <thead class="table-dark">
+            <tr>
+              <th>User</th>
+              <th>Date</th>
+              <th>Time</th>
+              <th>Location</th>
+              <th>Notes</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for booking in bookings %}
+            <tr>
+              <td>{{ booking.user_name.username }}</td>
+              <td>{{ booking.date }}</td>
+              <td>{{ booking.time }}</td>
+              <td>{{ booking.location }}</td>
+              <td>{{ booking.notes }}</td>
+              <td>{{ booking.status }}</td>
+              <td>
+                {% if booking.status == 'pending' %}
+                  <a href="{% url 'main:accept_booking' booking.id %}" class="btn btn-success btn-sm">Accept</a>
+                  <a href="{% url 'main:reject_booking' booking.id %}" class="btn btn-danger btn-sm">Reject</a>
+                {% else %}
+                  <span class="text-muted">No Actions</span>
+                {% endif %}
+              </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    {% else %}
+      <p>No bookings yet.</p>
+    {% endif %}
+  </div>
+  {% endblock %}

@@ -1,0 +1,49 @@
+{% extends 'main/base.html' %}
+{% block title%} About us{% endblock %}
+{% load static %}
+{% block content %}
+    <div class="container py-5">
+    <h2 class="mb-4">My Bookings</h2>
+
+    {% if bookings %}
+        <div class="table-responsive">
+        <table class="table table-bordered table-striped">
+            <thead class="table-dark">
+            <tr>
+                <th>Volunteer</th>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Location</th>
+                <th>Notes</th>
+                <th>Status</th>
+                <th>Rating</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for booking in bookings %}
+            <tr>
+                <td>{{ booking.volunteer_name.full_name }}</td>
+                <td>{{ booking.date }}</td>
+                <td>{{ booking.time }}</td>
+                <td>{{ booking.location }}</td>
+                <td>{{ booking.notes }}</td>
+                <td>{{ booking.status }}</td>
+                <td>
+                {% if booking.status == 'accepted' and booking.date < today and not booking.rating %}
+                    <a href="{% url 'main:rate_volunteer' booking.id %}" class="btn btn-primary btn-sm">Rate</a>
+                {% elif booking.rating %}
+                    {{ booking.rating }} ★
+                {% else %}
+                    -
+                {% endif %}
+                </td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        </div>
+    {% else %}
+        <p>You don't have any bookings yet.</p>
+    {% endif %}
+    </div>
+{% endblock %}

@@ -53,6 +53,6 @@ class booking(models.Model):
  
 
     def __str__(self):
-        return f"{self.user.username} - {self.volunteer.user.username} - {self.date}"
+        return f"{self.user_name.username} - {self.volunteer_name.full_name} - {self.date}"
 
 

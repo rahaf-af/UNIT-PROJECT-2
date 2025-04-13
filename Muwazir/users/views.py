@@ -1,6 +1,6 @@
 from django.shortcuts import render ,redirect
 from django.http import HttpRequest,HttpResponse
-from main.models import user,volunteer
+from main.models import user,volunteer,booking
 
 # Create your views here.
 def create_user_account(request:HttpRequest):
@@ -40,10 +40,19 @@ def update_profile(request:HttpRequest ,user_id:int):
 
     return render(request, "users/update_profile.html",{"user":users})
 
-def user_bookings(request:HttpRequest):
-
-    return render(request, "users/user_bookings.html")
+def my_bookings(request: HttpRequest):
+    bookings = booking.objects.filter(user_name=request.user)
+    return render(request, 'main/my_bookings.html', {"bookings": bookings})
 
 def volunteer_profile(request:HttpRequest ,volunteer_id:int):
     volunteers=volunteer.objects.get(pk=volunteer_id)
     return render(request, "users/volunteer_profile.html",{"volunteer":volunteers})
+
+def rate_volunteer(request: HttpRequest, booking_id: int):
+    book = booking.objects.get(id=booking_id)
+    if request.method == "POST":
+        rating = int(request.POST.get("rating"))
+        book.rating = rating
+        book.save()
+        return redirect('main:my_bookings')
+    return render(request, 'main/rate_volunteer.html', {"booking": book})

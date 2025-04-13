@@ -10,6 +10,7 @@ urlpatterns=[
    path("profile/<int:volunteer_id>/",views.volunteer_profile,name="volunteer_profile"),
    path("update/<int:volunteer_id>/",views.update_profile,name="update_profile"),
    path("delete<int:volunteer_id>/",views.delete_profile,name="delete_profile"),
-   path("availability/<int:volunteer_id>/",views.availability,name="availability"),
-   path("login/",views.login,name="login"),
+   path("bookings/<int:volunteer_id>/",views.volunteer_bookings,name="bookings"),
+   path("availability/<int:volunteer_id>",views.availability,name="availability"),
+   
 ]

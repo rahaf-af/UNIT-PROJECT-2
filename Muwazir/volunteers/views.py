@@ -1,14 +1,25 @@
 from django.shortcuts import render ,redirect
 from django.http import HttpRequest,HttpResponse
-from main.models import volunteer
+from main.models import volunteer,booking
 
 # Create your views here.
 def create_volunteer_account(request:HttpRequest):
     if request.method=="POST":
-        new_volunteer=volunteer(full_name=request.POST["full_name"],gender=request.POST["gender"],nationality=request.POST["nationality"],phone_num=request.POST["phone_num"],email=request.POST["email"],Volunteering_site=request.POST["Volunteering_site"],service=request.POST["service"],profile_photo=request.FILES["profile_photo"])
-        new_volunteer.save()
-        return redirect('main:home')
-
+        try:
+            new_volunteer = volunteer(
+                full_name=request.POST.get("full_name"),
+                gender=request.POST.get("gender"),
+                nationality=request.POST.get("nationality"),
+                phone_num=request.POST.get("phone_num"),
+                email=request.POST.get("email"),
+                Volunteering_site=request.POST.get("Volunteering_site"),
+                service=", ".join(request.POST.getlist("service")),  # <-- مهم هنا
+                profile_photo=request.FILES.get("profile_photo")
+            )
+            new_volunteer.save()
+            return redirect("main:home")
+        except Exception as e:
+            print(f"Error creating volunteer: {e}")
     return render(request, "volunteers/create.html")
 
 def login(request:HttpRequest):
@@ -62,5 +73,10 @@ def availability(request:HttpRequest ,volunteer_id:int):
     volunteers.save()
     return redirect("volunteers:volunteer_profile",volunteer_id=volunteer_id)
 
+def my_bookings(request:HttpRequest ,volunteer_id:int):
 
-    
+   return render(request, "volunteers/update_profile.html") 
+
+def volunteer_bookings(request: HttpRequest):
+    bookings = booking.objects.filter(volunteer_name=request.user.volunteer)
+    return render(request, 'volunteer/volunteer_bookings.html', {"bookings": bookings})

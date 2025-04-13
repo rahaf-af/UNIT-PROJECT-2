@@ -10,7 +10,7 @@ urlpatterns=[
              path("contact/" ,views.contact , name="contact"),
              path("faq/" ,views.faq, name="faq"),
              path("services/" ,views.services, name="services"),
-             path("" ,views. signin, name="signin"),
+             path("signin/" ,views. signin, name="signin"),
              path("signup/" ,views. signup, name="signup"),
-             path("bookings/" ,views. bookings, name="bookings"),
+             path('bookings/<int:volunteer_id>/', views.bookings, name='bookings'),
              ]

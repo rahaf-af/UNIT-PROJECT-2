@@ -37,16 +37,16 @@ def signin(request:HttpRequest):
       else:
          messages.error(request, "please try again, your credentials are wrong" ,"alert-danger" )
 
+
    return render(request, 'main/signin.html')
 
 def signup(request:HttpRequest):
    if request.method =="POST":
-
       try:
          new_user = User.objects.create(first_name=request.POST["first_name"],last_name=request.POST["last_name"],username=request.POST["username"],email=request.POST["email"])
          new_user.set_password(request.POST["password"])
          new_user.save()
-         messages.SUCCESS(request,"Registered user successfuly!","alert-success")
+         messages.success(request,"Registered user successfuly!","alert-success")
          return redirect("main:signin")
       except Exception as e:
          print(e)
@@ -62,6 +62,9 @@ def bookings(request: HttpRequest, volunteer_id: int):
     volunteers = volunteer.objects.get(pk=volunteer_id)
 
     if request.method == "POST":
+        
+        current_user = request.user
+        selected_volunteer = volunteer.objects.get(id=volunteer_id)
         date = request.POST.get("date")
         time = request.POST.get("time")
         location = request.POST.get("location")
@@ -73,12 +76,13 @@ def bookings(request: HttpRequest, volunteer_id: int):
 
         new_booking = booking(
             user_name=request.user,
-            volunteer_name=volunteers,
+            volunteer_name=selected_volunteer,
             date=date,
             time=time,
             location=location,
             notes=notes
         )
+        
         new_booking.save()
         messages.success(request, "Reservation created successfully.")
         return redirect('volunteers:volunteer_profile', volunteer_id=volunteers.id)
