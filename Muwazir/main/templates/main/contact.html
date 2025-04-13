@@ -58,38 +58,15 @@
     
                     <!-- Password input -->
                     <div data-mdb-input-init class="form-outline mb-4">
-                    <input type="password" id="form3Example4" class="form-control" />
-                    <label class="form-label" for="form3Example4">Password</label>
+                    <textarea type="text" id="form3Example4" class="form-control" ></textarea>
+                    <label class="form-label" for="form3Example4">message</label>
                     </div>
                     <!-- Password input -->
-                    <div data-mdb-input-init class="form-outline mb-4">
-                        <input type="password" id="form3Example4" class="form-control" />
-                        <label class="form-label" for="form3Example4">Password confirmation</label>
-                    </div>
     
                     <!-- Submit button -->
-                    <a href="{% url 'main:user_type' %}"><button type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-block mb-4">Sign up</button></a>
+                    <a href="{% url 'main:user_type' %}"><button type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-block mb-4">Send </button></a>
     
                     <!-- Register buttons -->
-                    <div class="text-center">
-                    <p>or sign up with:</p>
-                    <button  type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-link btn-floating mx-1">
-                        <i class="fab fa-facebook-f" style="color:  #cea46d;"></i>
-                    </button>
-    
-                    <button  type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-link btn-floating mx-1">
-                        <i class="fab fa-google "style="color:  #cea46d;"></i>
-                    </button>
-    
-                    <button  type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-link btn-floating mx-1">
-                        <i class="fab fa-twitter" style="color:  #cea46d;"></i>
-                    </button>
-    
-                    <button  type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-link btn-floating mx-1">
-                        <i class="fab fa-github" style="color:  #cea46d;"></i>
-                    </button>
-                    <p>Already have an account?</p><a href="{% url 'main:signin' %}">signin</a>
-                    </div>
                 </form>
                 </div>
             </div>
