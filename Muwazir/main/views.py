@@ -58,11 +58,29 @@ def logout(request:HttpRequest):
 
    return render(request, 'main/logout.html')
    
-def bookings(request:HttpRequest ,volunteer_id:int):
-   volunteers=volunteer.get(pk=volunteer_id)
-   if request.method=="POST":
-        new_booking=booking(date=request.POST["date"],time=request.POST["time"],nationality=request.POST["nationality"],location=request.POST["location"],notes=request.POST["notes"])
-        new_booking.save()
-        return redirect('volunteers:volunteer_profile',volunteer_id = volunteers.id)
-   return render(request, 'main/bookings.html')
+def bookings(request: HttpRequest, volunteer_id: int):
+    volunteers = volunteer.objects.get(pk=volunteer_id)
 
+    if request.method == "POST":
+        date = request.POST.get("date")
+        time = request.POST.get("time")
+        location = request.POST.get("location")
+        notes = request.POST.get("notes")
+
+        if not date or not time or not location:
+            messages.error(request, "Please fill in all required fields.")
+            return render(request, 'main/bookings.html', {"volunteer": volunteers})
+
+        new_booking = booking(
+            user_name=request.user,
+            volunteer_name=volunteers,
+            date=date,
+            time=time,
+            location=location,
+            notes=notes
+        )
+        new_booking.save()
+        messages.success(request, "Reservation created successfully.")
+        return redirect('volunteers:volunteer_profile', volunteer_id=volunteers.id)
+
+    return render(request, 'main/bookings.html', {"volunteer": volunteers})
