@@ -1,7 +1,9 @@
-from django.shortcuts import render
+from django.shortcuts import render ,redirect
 from django.http import HttpRequest,HttpResponse
 from .models import volunteer,booking
-
+from django.contrib.auth.models import User
+from django.contrib import messages
+from django.contrib.auth import authenticate ,login
 
 # Create your views here
 def user_type(request:HttpRequest):
@@ -26,23 +28,41 @@ def services(request:HttpRequest):
    return render(request, 'main/services.html')
 
 def signin(request:HttpRequest):
+   if request.method == "POST":
+      user = authenticate(request, username=request.POST["username"], password=request.POST["password"])
+      if user:
+         login(request ,user)
+         messages.success(request,"Logged in successfuly!","alert-success")
+         return redirect("main:home")
+      else:
+         messages.error(request, "please try again, your credentials are wrong" ,"alert-danger" )
+
    return render(request, 'main/signin.html')
 
 def signup(request:HttpRequest):
+   if request.method =="POST":
+
+      try:
+         new_user = User.objects.create(first_name=request.POST["first_name"],last_name=request.POST["last_name"],username=request.POST["username"],email=request.POST["email"])
+         new_user.set_password(request.POST["password"])
+         new_user.save()
+         messages.SUCCESS(request,"Registered user successfuly!","alert-success")
+         return redirect("main:signin")
+      except Exception as e:
+         print(e)
+
+
    return render(request, 'main/signup.html')
 
+def logout(request:HttpRequest):
+
+   return render(request, 'main/logout.html')
+   
 def bookings(request:HttpRequest ,volunteer_id:int):
-   new_booking=booking.get(pk=volunteer_id)
+   volunteers=volunteer.get(pk=volunteer_id)
    if request.method=="POST":
-        booking.full_name=request.POST["full_name"]
-        volunteers.gender=request.POST["gender"]
-        volunteers.nationality=request.POST["nationality"]
-        volunteers.phone_num=request.POST["phone_num"]
-        volunteers.email=request.POST["email"]
-        volunteers.Volunteering_site=request.POST["Volunteering_site"]
-        volunteers.service=request.POST["service"]
-        if "profile_photo" in request.FILES:
-            volunteers.profile_photo=request.FILES["profile_photo"]
-        volunteers.save()
+        new_booking=booking(date=request.POST["date"],time=request.POST["time"],nationality=request.POST["nationality"],location=request.POST["location"],notes=request.POST["notes"])
+        new_booking.save()
         return redirect('volunteers:volunteer_profile',volunteer_id = volunteers.id)
    return render(request, 'main/bookings.html')
+

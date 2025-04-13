@@ -14,7 +14,7 @@
     <div class="container text-center">
       <div class="row">
         <div class="col">
-          <form class="d-flex flex-column gap-2" action="{%url 'users:create_user_account' %}"meththod="post" enctype="multipart/form-data">
+          <form class="d-flex flex-column gap-2" action="{%url 'users:create_user_account' %}" method="post" enctype="multipart/form-data">
               {% csrf_token %}
               <label>Full name</label>
               <input  type="text" name="full_name" id="full_name" class="form-control"/>

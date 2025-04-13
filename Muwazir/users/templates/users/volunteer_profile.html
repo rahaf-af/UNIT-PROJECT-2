@@ -41,7 +41,7 @@
                   </button>
                 </form>
                 <div class="d-flex justify-content-center mb-2 gap-2">
-                  <a href="{% url 'volunteers:update_profile' volunteer_id=volunteer.id %}"><button  type="button" data-mdb-button-init data-mdb-ripple-init class="btn-primary">Make a reservation</button></a>
+                  <a href="{% url 'main:bookings' volunteer_id=volunteer.id %}"><button  type="button" data-mdb-button-init data-mdb-ripple-init class="btn-primary">Make a reservation</button></a>
                 </div>
               </div>
             </div>
